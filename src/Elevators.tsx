@@ -5,49 +5,23 @@ import { myElevatorSystem, Direction, Status, Pickup, Elevator} from './elevator
 import './Elevators.css';
 import { sys } from 'typescript';
 
-let myData: Elevator[] = [
-  {
-    id: 1, 
-    currentFloor:0, 
-    floorQueue:[],   
-    elevatorType: Direction.STATIC
-  }, 
+const noOfFloors = 15;
+const noOfElevators = 5;
 
-  {
-    id: 2, 
-    currentFloor:0, 
-    floorQueue:[],   
-    elevatorType: Direction.STATIC
-  }, 
-  
-  {
-    id: 3, 
-    currentFloor:0, 
-    floorQueue:[],   
-    elevatorType: Direction.STATIC
-  }, 
+let myData: Elevator[] = []
 
-  {
-    id: 4, 
-    currentFloor:0, 
-    floorQueue:[],   
-    elevatorType: Direction.STATIC
-  }, 
-
-  {
-    id: 5, 
-    currentFloor:0, 
-    floorQueue:[],   
-    elevatorType: Direction.STATIC
-  }, 
-
-]
+for(let i=1;i<noOfElevators+1;i++) {
+  myData.push({
+    id: i,
+    currentFloor: 0,
+    floorQueue:[],
+    elevatorType: Direction.STATIC,
+  })
+}
 
 export const system = new myElevatorSystem(myData);
 
 export const Elevators: React.FC = () => {
-  const noOfElevators = myData.length;
-  const noOfFloors = 10;
   let floors:number[] = [];
   for(let i = 0; i < noOfFloors; i++) {
     floors.push(noOfFloors - i - 1);
