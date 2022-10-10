@@ -182,18 +182,19 @@ export class myElevatorSystem implements ElevatorSystem {
 }
 //update destination of elevator after you reach floor where Pickup was run
   update: Update = (elevatorId, destinationFloor) => {
-    console.log("Update")
+    console.log("Update", elevatorId, destinationFloor)
     const currentStatus = this.data;
     let newData = [];
     const chosenElevator = currentStatus.filter(elevator => 
       elevator.id === elevatorId)[0];
     
-      if(destinationFloor){
-    chosenElevator.floorQueue.push(
-      {
-        floor: destinationFloor, 
-        direction: Direction.STATIC,
-        destinationFloor: null,
+      if(destinationFloor === 0){
+        console.log("Destination pushed")
+        chosenElevator.floorQueue.push(
+        {
+          floor: destinationFloor, 
+          direction: Direction.STATIC,
+          destinationFloor: null,
       });
     }
     //const newQueue: Query[] = [chosenElevator.floorQueue]

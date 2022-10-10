@@ -4,6 +4,8 @@ import {useState} from 'react';
 import { myElevatorSystem, Direction, Status, Pickup, Elevator} from './elevatorSystem';
 import './Elevators.css';
 import { sys } from 'typescript';
+//z braku pomysłu jak zrealizowac wybieranie pietra po dotarciu do miejsca przywolania windy, winda gdy jest bezczynna, zjezdza na sam dół,
+//linijka 70-75  "pickupHandler(floor, Direction.UP, 0)}", cel ustawiony na 0
 
 const noOfFloors = 15;
 const noOfElevators = 5;
