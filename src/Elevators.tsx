@@ -68,10 +68,10 @@ export const Elevators: React.FC = () => {
         >
           {floor}
           <button
-            onClick={event=>pickupHandler(floor, Direction.UP, null)}
+            onClick={event=>pickupHandler(floor, Direction.UP, 0)}
           >↑</button>
           <button
-            onClick={event=>pickupHandler(floor, Direction.DOWN, null)}
+            onClick={event=>pickupHandler(floor, Direction.DOWN, 0)}
           >↓</button>
         </li>
       })}
