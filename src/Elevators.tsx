@@ -12,27 +12,31 @@ let myData: Elevator[] = [
     floorQueue:[],   
     elevatorType: Direction.STATIC
   }, 
+
   {
     id: 2, 
-    currentFloor:1, 
+    currentFloor:0, 
     floorQueue:[],   
     elevatorType: Direction.STATIC
   }, 
+  
   {
     id: 3, 
-    currentFloor:2, 
+    currentFloor:0, 
     floorQueue:[],   
     elevatorType: Direction.STATIC
   }, 
+
   {
     id: 4, 
-    currentFloor:3, 
+    currentFloor:0, 
     floorQueue:[],   
     elevatorType: Direction.STATIC
   }, 
+
   {
     id: 5, 
-    currentFloor:4, 
+    currentFloor:0, 
     floorQueue:[],   
     elevatorType: Direction.STATIC
   }, 
@@ -65,7 +69,6 @@ export const Elevators: React.FC = () => {
   }
 
   const [activeFloors, setActiveFloors] = useState(system.status().map(e => e.currentFloor))
-
   return(
     <div className='container'>
       <ul className='elevators'>
@@ -75,7 +78,7 @@ export const Elevators: React.FC = () => {
               <div className='current'>{activeFloors[elevator.id - 1]}</div>
               {floors.map(floor=> {
                 return <li 
-                  className='floor'
+                  className={`floor ${floor===activeFloors[elevator.id - 1] ? "active" : ""}` }
                   key={floor}
                   >
                     {floor}
