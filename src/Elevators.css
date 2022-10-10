@@ -1,0 +1,42 @@
+:root {
+  --border-color: #000;
+}
+.container {
+  position: relative;
+}
+
+.elevators {
+  list-style-type: none;
+  position: relative;
+}
+
+.elevator {
+  float: left;
+  border: 1px solid var(--border-color);
+  padding: 0;
+  margin: 10px;
+}
+
+.floors {
+  padding: 0;
+  border: 5px solid var(--border-color);
+  list-style-type: none;
+}
+
+.floor {
+  padding: 15px 30px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  justify-content: center;
+}
+
+.current {
+  margin:auto;
+  padding: 15px 10px;
+  border-bottom:  5px solid var(--border-color);
+  text-align: center;
+  justify-content: center;
+  background-color: #D3D3D3;
+  font-weight: bold;
+  font-size: 20px;
+}
